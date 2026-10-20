@@ -75,6 +75,8 @@ Comportamientos del código adjunto: compra termina tras entrada inválida y adm
 
 `.github/workflows/pages.yml` construye y despliega `dist/` en GitHub Pages al actualizar `main`. En Settings → Pages, seleccionar GitHub Actions como fuente. La ruta usa recursos relativos para funcionar bajo `/codelab-fidelitas/`. `.nojekyll` conserva `_framework`.
 
+Las hojas de estilo, los módulos, el worker y los datos fuente se publican con nombres derivados de su contenido para evitar mezclar archivos de distintas versiones. Al abrir el taller se comprueba `version.json` sin caché; una copia HTML anterior se actualiza una sola vez por versión. Los avisos aparecen dentro de la consola, únicamente cuando tienen texto, y se retiran al terminar su tiempo.
+
 ## Referencias y permisos
 
 - [Pyodide: flujos de entrada/salida](https://pyodide.org/en/stable/usage/streams.html).
