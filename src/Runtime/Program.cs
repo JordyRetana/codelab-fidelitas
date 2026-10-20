@@ -4,7 +4,9 @@ using System.Reflection;
 using System.Globalization;
 using Console = CodeLab.ConsoleAdapter;
 
-await WebAssemblyHostBuilder.CreateDefault(args).Build().RunAsync();
+var host = WebAssemblyHostBuilder.CreateDefault(args).Build();
+await host.Services.GetRequiredService<IJSRuntime>().InvokeVoidAsync("codeLabDotnetReady");
+await host.RunAsync();
 
 public static class Bridge
 {

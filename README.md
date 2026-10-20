@@ -1,6 +1,9 @@
 # CodeLab Fidélitas
 
-Taller web responsive con seis estaciones, originales descargables, explicaciones por bloques y consola. Proyecto académico independiente, sin afiliación institucional declarada.
+Taller web responsive de estilo arcade moderno: seis misiones, originales descargables, bloques seleccionables, consola, casos sorpresa, progreso de pruebas y animaciones con respeto a reducción de movimiento. Proyecto académico independiente, sin afiliación institucional declarada.
+
+- Web: https://jordyretana.github.io/codelab-fidelitas/
+- Repositorio: https://github.com/JordyRetana/codelab-fidelitas
 
 ## Contenido y autoría
 
