@@ -1,6 +1,3 @@
-"""Ejercicio 3: implementación nueva con asistencia de OpenAI Codex.
-No forma parte de los cuatro programas originales adjuntos.
-"""
 import math
 from statistics import median
 

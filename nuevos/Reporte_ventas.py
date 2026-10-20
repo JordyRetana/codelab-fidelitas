@@ -1,6 +1,3 @@
-"""Ejercicio 6: implementación nueva con asistencia de OpenAI Codex.
-No forma parte de los cuatro programas originales adjuntos.
-"""
 import csv
 from decimal import Decimal, InvalidOperation
 

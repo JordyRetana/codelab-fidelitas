@@ -5,7 +5,7 @@ const csvPanel=document.createElement('div');csvPanel.className='csv-panel';csvP
 $('csv-upload').onchange=async e=>{const file=e.target.files[0];if(!file)return;if(file.size>1024*1024){toast('Usa un CSV de hasta 1 MB.');e.target.value='';return;}uploadedFiles={'ventas.csv':await file.text()};$('input').value='ventas.csv';$('csv-status').textContent=`${file.name} cargado como ventas.csv · ${file.size} bytes`;updateInput();};
 const results=new Map();
 const nav=$('nav');
-for(const [id,e] of Object.entries(exercises)){const a=document.createElement('a');a.href='#'+id;a.innerHTML=`<span class="num">${String(id).padStart(2,'0')} /</span><b>${e.short}</b><small>${e.lang}${e.isNew?' · NUEVO':''}</small>`;nav.append(a);}
+for(const [id,e] of Object.entries(exercises)){const a=document.createElement('a');a.href='#'+id;a.innerHTML=`<span class="num">${String(id).padStart(2,'0')} /</span><b>${e.short}</b><small>${e.lang}</small>`;nav.append(a);}
 function render(){
  if(busy)return;
  const requested=Number(location.hash.slice(1));if(exercises[requested])active=requested;
@@ -14,14 +14,14 @@ function render(){
  document.title=`${e.title} — CodeLab Fidélitas`;
  $('label').textContent=`ESTACIÓN ${String(active).padStart(2,'0')} / 06`;
  $('title').textContent=e.title;$('description').textContent=e.description;
- $('runtime').textContent=(e.lang==='Python'?'Python · Pyodide / WASM':'C# · .NET / WASM')+(e.isNew?' · NUEVO':'');
+ $('runtime').textContent=e.lang==='Python'?'Python · Pyodide / WASM':'C# · .NET / WASM';
  csvPanel.hidden=active!==6;$('report-download').hidden=true;
  $('workspace').hidden=!e.lang;$('pending').hidden=!!e.lang;$('test-all').hidden=!e.lang;
  $('output').textContent='Tu resultado aparecerá aquí.';
  $('engine-status').textContent='Carga bajo demanda';
  if(e.lang){
   $('input').value=e.example;updateInput();
-  const s=sources[active];$('filename').textContent=s.file;$('download').href=s.path.split('/').map(encodeURIComponent).join('/');$('download').textContent=s.kind==='nuevo'?'↓ Fuente nueva':'↓ Original';document.querySelector('.filebar span:last-child').textContent=s.kind==='nuevo'?'NUEVO · CODEX':'ORIGINAL · SOLO LECTURA';
+  const s=sources[active];$('filename').textContent=s.file;$('download').href=s.path.split('/').map(encodeURIComponent).join('/');$('download').textContent='↓ Descargar código';document.querySelector('.filebar span:last-child').textContent='SOLO LECTURA';
   const code=$('code');code.setAttribute('aria-label','Código fuente de la estación');code.replaceChildren();
   const lines=s.code.replace(/\r/g,'').split('\n');
   lines.forEach(line=>{const span=document.createElement('span');span.className='code-line'+(/^\s*(#|\/\/)/.test(line)?' comment':'');span.textContent=line||' ';code.append(span);});
