@@ -5,7 +5,7 @@ html{scroll-behavior:smooth;scrollbar-color:#2748ed #e5e7f0;scrollbar-width:thin
 .source pre,#output,textarea,td details pre{scrollbar-color:#d9e777 #22263f}
 .csv-panel{margin:14px 18px;padding:12px;border:1.5px dashed #2748ed;background:#edf0ff;border-radius:7px;font-size:10px}.csv-panel label{margin:0 0 10px}.csv-panel input{max-width:100%;font:10px 'Space Grotesk',sans-serif}.csv-panel input::file-selector-button{background:#2748ed;color:white;border:0;border-radius:4px;padding:8px;cursor:pointer}.csv-panel p{font-size:9px;overflow-wrap:anywhere}.csv-panel a{display:inline-block;color:#2748ed;margin:4px 12px 0 0;font-weight:600}nav a:nth-child(3),nav a:nth-child(6){border-style:solid;background:#fffefa;box-shadow:3px 3px 0 #191b30}nav a:nth-child(3).active,nav a:nth-child(6).active{background:#f7f166}
 @supports selector(::-webkit-scrollbar){
- html,*{scrollbar-color:auto;scrollbar-width:auto}
+ html,*,.source pre,#output,textarea,td details pre{scrollbar-color:auto;scrollbar-width:auto}
  ::-webkit-scrollbar{width:11px;height:11px}
  ::-webkit-scrollbar-track{background:#e5e7f0;border-radius:12px}
  ::-webkit-scrollbar-thumb{background:#2748ed;border:3px solid #e5e7f0;border-radius:12px;min-height:38px}
