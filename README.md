@@ -11,10 +11,10 @@ Taller web responsive de estilo arcade moderno: seis misiones, originales descar
 |---|---|---|
 | 1 · Compra | `Calculo de compra.py` | Python real con Pyodide |
 | 2 · Frases | `Program (1).cs` | C# compilado, .NET WebAssembly |
-| 3 · Calificaciones | No adjuntado | Pendiente |
+| 3 · Calificaciones | `nuevos/Calificaciones.py` | Implementación nueva · Python / Pyodide |
 | 4 · Inventario | `Inventario.py` | Python real con Pyodide |
 | 5 · Reservas | `Program.cs` | C# compilado, .NET WebAssembly |
-| 6 · Reporte CSV | No adjuntado | Pendiente |
+| 6 · Reporte CSV | `nuevos/Reporte_ventas.py` | Implementación nueva · Python / Pyodide |
 
 Los cinco adjuntos se preservan byte por byte en `originales/`. No se inventan integrantes ni se atribuye código a personas sin evidencia. El documento identifica al docente Manuel Sanabria; no identifica a los autores de los programas. Los campos de curso, grupo, integrantes y fecha están vacíos.
 
@@ -22,7 +22,7 @@ Los cinco adjuntos se preservan byte por byte en `originales/`. No se inventan i
 |---|---|---|
 | Cuatro programas adjuntos | Autoría no identificada | Pendiente de completar por el equipo |
 | Interfaz, adaptador, documentación, explicaciones y pruebas | Generados con asistencia de OpenAI Codex a solicitud del usuario | Ver `VALIDACION.md` |
-| Ejercicios 3 y 6 | Pendientes | Sin implementación atribuida |
+| Ejercicios 3 y 6 | Implementaciones nuevas con asistencia de OpenAI Codex | Pruebas reproducibles y atribución separada |
 
 ## Abrir y ejecutar
 
@@ -31,6 +31,12 @@ En GitHub Pages, abrir la URL del proyecto y seleccionar un ejercicio. Python de
 Introducir una respuesta por línea y pulsar **Ejecutar programa**. Los menús deben terminar con 6 (inventario) o 4 (reservas). Cada ejecución reinicia el estado; no hay persistencia ni backend. El adaptador entrega entradas por lotes, no una terminal interactiva de preguntas sucesivas. No permite editar ni compilar nuevos programas en el navegador. **Cargar** restaura un caso; **Ejecutar pruebas del ejercicio** ejecuta cada caso y compara fragmentos esperados con salida real. Los resultados comienzan como «Sin ejecutar».
 
 Python ejecuta el texto original en un Web Worker. El worker se termina a los 20 segundos (incluida descarga); si la conexión es lenta, reintentar. C# ejecuta los ensamblados por reflexión con cultura invariante para resultados reproducibles. Como el navegador no admite `System.Console.ReadLine`, los proyectos definen un alias de compilación `Console = CodeLab.ConsoleAdapter`: solo sustituye la entrada/salida por lectores y escritores de texto. La lógica y los archivos originales no cambian. Las referencias incluyen usings implícitos del SDK, sin agregar líneas a los originales. Se desactiva trimming para conservar los puntos de entrada privados. No se simula C# en JavaScript. Al agotar respuestas, el adaptador interrumpe el menú con un aviso; C# limita la lectura a 1000 respuestas. El botón Detener termina el worker Python; C# se ejecuta en el hilo del navegador y queda sujeto al límite de entradas.
+
+## Archivos CSV y nuevos programas
+
+El ejercicio 6 acepta un CSV UTF-8 de hasta 1 MB. El archivo seleccionado se coloca como `ventas.csv` en el sistema de archivos de Pyodide; el programa Python lo lee y genera `reporte_ventas.csv`. El enlace de descarga entrega los bytes producidos por Python. Todo ocurre en el navegador, sin subir el CSV a un servidor. **Restaurar ejemplo** vuelve al CSV del enunciado. Los casos de prueba usan sus propios archivos y verifican que los errores de encabezado o archivo ausente conserven un reporte previo. Los fixtures están en `ejemplos/`.
+
+El ejercicio 3 vuelve a pedir cantidades y notas inválidas; una respuesta por línea incluye las correcciones. Se rechazan notas no finitas. Los dos programas nuevos separan lectura, cálculo y presentación en funciones. Para ejecutarlos localmente: `python nuevos/Calificaciones.py` y `python nuevos/Reporte_ventas.py`. En el segundo, introducir la ruta `ejemplos/ventas.csv` cuando se solicite.
 
 ## Construir localmente
 
@@ -59,11 +65,11 @@ python originales/Inventario.py
 
 ## Pruebas y discrepancias
 
-`web/catalog.js` contiene 22 casos ejecutables (5 compra, 5 frases, 5 inventario, 7 reservas), con entradas y fragmentos esperados. Las salidas obtenidas se pueden desplegar en la mesa de pruebas. Los ejercicios pendientes solo muestran criterios de aceptación, sin fingir pruebas aprobadas. El estado completo se documenta en `VALIDACION.md`.
+`web/catalog.js` contiene 34 casos ejecutables: 5 compra, 5 frases, 5 calificaciones, 5 inventario, 7 reservas y 7 CSV. Incluye entradas, archivos de prueba y resultados esperados. Las salidas obtenidas se despliegan en la mesa de pruebas. CSV compara además el contenido exacto del archivo producido o preservado. El estado de la verificación se documenta en `VALIDACION.md`.
 
 En el documento, «Anita lava la tina» indica 2 dígitos. Son 0; el programa devuelve correctamente 0. Se conserva el documento original sin corregirlo.
 
-Comportamientos del código adjunto: compra termina tras entrada inválida y admite `inf` como precio; inventario permite nombre vacío y no elimina espacios extremos del nombre. Las soluciones están organizadas principalmente como flujo de consola, sin separación completa en funciones. El análisis de frases normaliza espacios literales, no todas las clases Unicode de espacios. Son observaciones del original; no se hicieron correcciones silenciosas. Los ejercicios 3 y 6, sus CSV y sus pruebas siguen pendientes. Esta web no presenta la entrega académica como completa.
+Comportamientos del código adjunto: compra termina tras entrada inválida y admite `inf` como precio; inventario permite nombre vacío y no elimina espacios extremos del nombre. Las soluciones están organizadas principalmente como flujo de consola, sin separación completa en funciones. El análisis de frases normaliza espacios literales, no todas las clases Unicode de espacios. Son observaciones del original; no se hicieron correcciones silenciosas. Los ejercicios 3 y 6 se implementaron por solicitud posterior del usuario y se identifican como nuevos; no se presentan como autoría de quienes entregaron los originales. El equipo todavía debe completar integrantes, contribuciones y revisión académica.
 
 ## Publicar
 

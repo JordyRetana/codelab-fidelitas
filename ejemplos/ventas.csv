@@ -1,0 +1,5 @@
+codigo,producto,cantidad,precio_unitario
+P01,Cuaderno,2,1500
+P02,Lapiz,3,500
+P01,Cuaderno,1,1500
+P03,Borrador,0,300

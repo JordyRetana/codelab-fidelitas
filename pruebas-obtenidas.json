@@ -1,0 +1,240 @@
+{
+  "fecha": "2026-10-20",
+  "entorno": "Navegador, runtimes WebAssembly reales, vista previa local",
+  "resultados": [
+    {
+      "ejercicio": 1,
+      "pruebas": [
+        {
+          "caso": "Normal · inferior al umbral",
+          "esperado": "Descuento: 0.00\nTotal: 2260.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese el precio unitario: Ingrese la cantidad: Subtotal: 2000.00\nDescuento: 0.00\nBase: 2000.00\nImpuesto: 260.00\nTotal: 2260.00\n"
+        },
+        {
+          "caso": "Límite · exactamente 50000",
+          "esperado": "Descuento: 5000.00\nTotal: 50850.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese el precio unitario: Ingrese la cantidad: Subtotal: 50000.00\nDescuento: 5000.00\nBase: 45000.00\nImpuesto: 5850.00\nTotal: 50850.00\n"
+        },
+        {
+          "caso": "Inválido · cantidad cero",
+          "esperado": "deben ser mayores que cero",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese el precio unitario: Ingrese la cantidad: El precio y la cantidad deben ser mayores que cero\n"
+        },
+        {
+          "caso": "Inválido · cantidad decimal",
+          "esperado": "cantidad entera",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese el precio unitario: Ingrese la cantidad: Error: ingrese un precio válido y una cantidad entera\n"
+        },
+        {
+          "caso": "Inválido · texto en precio",
+          "esperado": "Error: ingrese",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese el precio unitario: Error: ingrese un precio válido y una cantidad entera\n"
+        }
+      ]
+    },
+    {
+      "ejercicio": 2,
+      "pruebas": [
+        {
+          "caso": "Normal · ejemplo corregido",
+          "esperado": "Palabras: 4\nVocales: 8\nDigitos: 0\nPalindromo: Si",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese una frase: \nRESULTADOS\nPalabras: 4\nVocales: 8\nDigitos: 0\nPalindromo: Si\n"
+        },
+        {
+          "caso": "Normal · acentos y números",
+          "esperado": "Palabras: 3\nVocales: 3\nDigitos: 3\nPalindromo: No",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese una frase: \nRESULTADOS\nPalabras: 3\nVocales: 3\nDigitos: 3\nPalindromo: No\n"
+        },
+        {
+          "caso": "Inválido · frase vacía",
+          "esperado": "La frase no puede estar vacia.",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese una frase: La frase no puede estar vacia.\n"
+        },
+        {
+          "caso": "Límite · solo signos",
+          "esperado": "Palabras: 0\nPalindromo: No evaluable",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese una frase: \nRESULTADOS\nPalabras: 0\nVocales: 0\nDigitos: 0\nPalindromo: No evaluable\n"
+        },
+        {
+          "caso": "Espacios consecutivos",
+          "esperado": "Palabras: 2\nVocales: 4",
+          "estado": "✓ Aprobado",
+          "obtenido": "Ingrese una frase: \nRESULTADOS\nPalabras: 2\nVocales: 4\nDigitos: 0\nPalindromo: No\n"
+        }
+      ]
+    },
+    {
+      "ejercicio": 3,
+      "pruebas": [
+        {
+          "caso": "Normal · ejemplo del enunciado",
+          "esperado": "Promedio: 76.00\nMediana: 70.00\nAprobados: 4\nReprobados: 1\nOrden descendente: [100, 85, 70, 70, 55]\nLista original: [70, 85, 100, 55, 70]",
+          "estado": "✓ Aprobado",
+          "obtenido": "Cantidad de calificaciones: Nota 1: Nota 2: Nota 3: Nota 4: Nota 5: Promedio: 76.00\nMínima: 55\nMáxima: 100\nAprobados: 4\nReprobados: 1\nMediana: 70.00\nOrden descendente: [100, 85, 70, 70, 55]\nLista original: [70, 85, 100, 55, 70]\n"
+        },
+        {
+          "caso": "Límite · una nota igual a 70",
+          "esperado": "Promedio: 70.00\nMediana: 70.00\nAprobados: 1",
+          "estado": "✓ Aprobado",
+          "obtenido": "Cantidad de calificaciones: Nota 1: Promedio: 70.00\nMínima: 70\nMáxima: 70\nAprobados: 1\nReprobados: 0\nMediana: 70.00\nOrden descendente: [70]\nLista original: [70]\n"
+        },
+        {
+          "caso": "Límite · mediana par",
+          "esperado": "Promedio: 60.00\nMediana: 70.00\nAprobados: 2",
+          "estado": "✓ Aprobado",
+          "obtenido": "Cantidad de calificaciones: Nota 1: Nota 2: Nota 3: Nota 4: Promedio: 60.00\nMínima: 0\nMáxima: 100\nAprobados: 2\nReprobados: 2\nMediana: 70.00\nOrden descendente: [100, 80, 60, 0]\nLista original: [0, 60, 80, 100]\n"
+        },
+        {
+          "caso": "Inválido · nota fuera de rango",
+          "esperado": "La nota debe estar entre 0 y 100\nPromedio: 85.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Cantidad de calificaciones: Nota 1: La nota debe estar entre 0 y 100\nNota 1: La nota debe estar entre 0 y 100\nNota 1: Promedio: 85.00\nMínima: 85\nMáxima: 85\nAprobados: 1\nReprobados: 0\nMediana: 85.00\nOrden descendente: [85]\nLista original: [85]\n"
+        },
+        {
+          "caso": "Inválido · cantidad y nota no numérica",
+          "esperado": "La cantidad debe ser un entero positivo\nIngrese una nota numérica\nMediana: 70.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Cantidad de calificaciones: La cantidad debe ser un entero positivo\nCantidad de calificaciones: La cantidad debe ser un entero positivo\nCantidad de calificaciones: Nota 1: La nota debe estar entre 0 y 100\nNota 1: Ingrese una nota numérica\nNota 1: Promedio: 70.00\nMínima: 70\nMáxima: 70\nAprobados: 1\nReprobados: 0\nMediana: 70.00\nOrden descendente: [70]\nLista original: [70]\n"
+        }
+      ]
+    },
+    {
+      "ejercicio": 4,
+      "pruebas": [
+        {
+          "caso": "Normal · retiro y stock bajo",
+          "esperado": "Nuevo stock: 5\nP01 Cuaderno 5",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Nombre: Stock inicial: Producto registrado\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Cantidad a retirar: Nuevo stock: 5\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: P01 Cuaderno 5\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Programa finalizado\n"
+        },
+        {
+          "caso": "Límite · retirar todo",
+          "esperado": "Nuevo stock: 0\nStock: 0",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Nombre: Stock inicial: Producto registrado\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Cantidad a retirar: Nuevo stock: 0\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Código: A\nNombre: Lápiz\nStock: 0\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Programa finalizado\n"
+        },
+        {
+          "caso": "Inválido · retiro excesivo",
+          "esperado": "Stock insuficiente\nStock: 5",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Nombre: Stock inicial: Producto registrado\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Cantidad a retirar: Stock insuficiente\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Código: A\nNombre: Lápiz\nStock: 5\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Programa finalizado\n"
+        },
+        {
+          "caso": "Inválido · código duplicado",
+          "esperado": "El código ya existe",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Nombre: Stock inicial: Producto registrado\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: El código ya existe\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Programa finalizado\n"
+        },
+        {
+          "caso": "Inválido · stock negativo",
+          "esperado": "El stock no puede ser negativo",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Código: Nombre: Stock inicial: El stock no puede ser negativo\n\n--- CONTROL DE INVENTARIO ---\n1. Registrar producto\n2. Consultar producto\n3. Ingresar unidades\n4. Retirar unidades\n5. Listar productos con stock bajo\n6. Salir\nSeleccione una opción: Programa finalizado\n"
+        }
+      ]
+    },
+    {
+      "ejercicio": 5,
+      "pruebas": [
+        {
+          "caso": "Normal · reservas consecutivas",
+          "esperado": "R1 - LAB1: 09:00 a 10:00\nR2 - LAB1: 10:00 a 11:00",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Laboratorio: R1 - LAB1: 09:00 a 10:00\nR2 - LAB1: 10:00 a 11:00\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Inválido · solapamiento",
+          "esperado": "Reserva rechazada por conflicto",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva rechazada por conflicto\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Inválido · fuera de jornada",
+          "esperado": "Horario invalido",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Horario invalido\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Cancelación libera intervalo",
+          "esperado": "Reserva cancelada\nR2 - LAB1: 09:00 a 10:00",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo a cancelar: Reserva cancelada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Laboratorio: R2 - LAB1: 09:00 a 10:00\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Límite · jornada completa",
+          "esperado": "Reserva aceptada",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Inválido · código duplicado",
+          "esperado": "Codigo duplicado",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Inicio (HH:MM): Fin (HH:MM): Reserva aceptada\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo: Laboratorio: Codigo duplicado\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        },
+        {
+          "caso": "Inválido · cancelar inexistente",
+          "esperado": "Codigo no encontrado",
+          "estado": "✓ Aprobado",
+          "obtenido": "\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: Codigo a cancelar: Codigo no encontrado\n\n=== RESERVAS ===\n1. Registrar\n2. Listar\n3. Cancelar\n4. Salir\nOpcion: "
+        }
+      ]
+    },
+    {
+      "ejercicio": 6,
+      "pruebas": [
+        {
+          "caso": "Normal · ejemplo con una fila inválida",
+          "esperado": "Error en línea 5: cantidad debe ser un entero positivo\nP01,Cuaderno,3,4500.00\nP02,Lapiz,3,1500.00\nTotal general: 6000.00\nFilas válidas: 3; inválidas: 1",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Error en línea 5: cantidad debe ser un entero positivo\nReporte generado: reporte_ventas.csv\ncodigo,producto,unidades,total\nP01,Cuaderno,3,4500.00\nP02,Lapiz,3,1500.00\nTotal general: 6000.00\nFilas válidas: 3; inválidas: 1\n\n[Archivo comprobado]\ncodigo,producto,unidades,total\nP01,Cuaderno,3,4500.00\nP02,Lapiz,3,1500.00\n"
+        },
+        {
+          "caso": "Límite · solo encabezado",
+          "esperado": "Total general: 0.00\nFilas válidas: 0; inválidas: 0",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Reporte generado: reporte_ventas.csv\ncodigo,producto,unidades,total\nTotal general: 0.00\nFilas válidas: 0; inválidas: 0\n\n[Archivo comprobado]\ncodigo,producto,unidades,total\n"
+        },
+        {
+          "caso": "Inválido · encabezado no sobrescribe",
+          "esperado": "Encabezado incorrecto",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Encabezado incorrecto; no se crea ni sobrescribe el reporte\n\n[Archivo comprobado]\nREPORTE ANTERIOR\n"
+        },
+        {
+          "caso": "Inválido · nombre incompatible",
+          "esperado": "Error en línea 3: nombre incompatible\nP01,Cuaderno,2,3000.00\nFilas válidas: 1; inválidas: 1",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Error en línea 3: nombre incompatible para el mismo código\nReporte generado: reporte_ventas.csv\ncodigo,producto,unidades,total\nP01,Cuaderno,2,3000.00\nTotal general: 3000.00\nFilas válidas: 1; inválidas: 1\n\n[Archivo comprobado]\ncodigo,producto,unidades,total\nP01,Cuaderno,2,3000.00\n"
+        },
+        {
+          "caso": "Límite · empate, precios distintos y normalización",
+          "esperado": "P01,Cuaderno,2,15.00\nP02,Lapiz,2,15.00\nTotal general: 30.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Reporte generado: reporte_ventas.csv\ncodigo,producto,unidades,total\nP01,Cuaderno,2,15.00\nP02,Lapiz,2,15.00\nTotal general: 30.00\nFilas válidas: 4; inválidas: 0\n\n[Archivo comprobado]\ncodigo,producto,unidades,total\nP01,Cuaderno,2,15.00\nP02,Lapiz,2,15.00\n"
+        },
+        {
+          "caso": "Inválido · archivo ausente conserva reporte",
+          "esperado": "No se pudo leer el archivo",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: No se pudo leer el archivo; no se modifica el reporte: [Errno 44] No such file or directory: 'no_existe.csv'\n\n[Archivo comprobado]\nCONSERVAR\n"
+        },
+        {
+          "caso": "Inválido · todas las filas rechazadas",
+          "esperado": "Filas válidas: 0; inválidas: 3\nTotal general: 0.00",
+          "estado": "✓ Aprobado",
+          "obtenido": "Archivo CSV: Error en línea 2: precio_unitario debe ser un número positivo\nError en línea 3: cantidad debe ser un entero positivo\nError en línea 4: código y producto son obligatorios\nReporte generado: reporte_ventas.csv\ncodigo,producto,unidades,total\nTotal general: 0.00\nFilas válidas: 0; inválidas: 3\n\n[Archivo comprobado]\ncodigo,producto,unidades,total\n"
+        }
+      ]
+    }
+  ]
+}
