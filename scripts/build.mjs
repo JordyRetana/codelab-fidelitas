@@ -1,9 +1,14 @@
 import {execFileSync} from 'node:child_process';
 import {mkdirSync,cpSync,writeFileSync,readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 execFileSync('dotnet',['publish','src/Runtime/Runtime.csproj','-c','Release','-o','.build/runtime'],{stdio:'inherit'});
 mkdirSync('dist',{recursive:true});
 cpSync('.build/runtime/wwwroot','dist',{recursive:true});
 cpSync('web','dist',{recursive:true});
+const arcadeCSS=readFileSync('web/arcade.css');
+const arcadeName='arcade.'+createHash('sha256').update(arcadeCSS).digest('hex').slice(0,12)+'.css';
+writeFileSync('dist/'+arcadeName,arcadeCSS);
+writeFileSync('dist/index.html',readFileSync('web/index.html','utf8').replace('href="arcade.css"','href="'+arcadeName+'"'));
 cpSync('originales','dist/originales',{recursive:true});
 cpSync('nuevos','dist/nuevos',{recursive:true});
 cpSync('ejemplos','dist/ejemplos',{recursive:true});
