@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {mkdirSync,cpSync,writeFileSync,readFileSync} from 'node:fs';
+execFileSync('dotnet',['publish','src/Runtime/Runtime.csproj','-c','Release','-o','.build/runtime'],{stdio:'inherit'});
+mkdirSync('dist',{recursive:true});
+cpSync('.build/runtime/wwwroot','dist',{recursive:true});
+cpSync('web','dist',{recursive:true});
+cpSync('originales','dist/originales',{recursive:true});
+cpSync('README.md','dist/README.md');
+writeFileSync('dist/.nojekyll','');
+const paths={1:'Calculo de compra.py',2:'Program (1).cs',4:'Inventario.py',5:'Program.cs'};
+writeFileSync('dist/sources.json',JSON.stringify(Object.fromEntries(Object.entries(paths).map(([id,file])=>[id,{file,code:readFileSync('originales/'+file,'utf8')}]))));

@@ -1,0 +1,3 @@
+importScripts('https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js');
+const ready=loadPyodide();
+onmessage=async({data})=>{try{const py=await ready;postMessage({status:'Python / Pyodide listo'});let output='';const lines=data.input.replace(/\r/g,'').split('\n');if(lines.at(-1)==='')lines.pop();let i=0;py.setStdin({stdin:()=>i<lines.length?lines[i++]:null});py.setStdout({batched:s=>{output+=s+'\n';}});py.setStderr({batched:s=>{output+=s+'\n';}});const scope=py.toPy({__name__:'__main__'});try{py.runPython(data.code,{globals:scope});}catch(e){output+='\n[Adaptador: '+e.message+']';}finally{scope.destroy();}postMessage({output});}catch(e){postMessage({error:e.message});}};
