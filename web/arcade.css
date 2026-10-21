@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-/* Barras del taller: la página y las consolas comparten forma, con contraste propio. */
+/* Barras de desplazamiento */
 html{scroll-behavior:smooth;scrollbar-color:#2748ed #e5e7f0;scrollbar-width:thin}
 *{scrollbar-width:thin;scrollbar-color:#2748ed #e5e7f0}
 .source pre,#output,textarea,td details pre{scrollbar-color:#d9e777 #22263f}

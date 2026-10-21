@@ -1,6 +1,6 @@
 # CodeLab Fidélitas
 
-Taller web responsive de estilo arcade moderno: seis misiones, originales descargables, bloques seleccionables, consola, casos sorpresa, progreso de pruebas y animaciones con respeto a reducción de movimiento. Proyecto académico independiente, sin afiliación institucional declarada.
+Proyecto de práctica con seis ejercicios de Python y C#. Permite consultar el código, leer la explicación de cada bloque y ejecutar programas y pruebas en el navegador.
 
 - Web: https://jordyretana.github.io/codelab-fidelitas/
 - Repositorio: https://github.com/JordyRetana/codelab-fidelitas
@@ -9,20 +9,20 @@ Taller web responsive de estilo arcade moderno: seis misiones, originales descar
 
 | Ejercicio | Archivo original | Estado |
 |---|---|---|
-| 1 · Compra | `Calculo de compra.py` | Python real con Pyodide |
+| 1 · Compra | `Calculo de compra.py` | Python con Pyodide |
 | 2 · Frases | `Program (1).cs` | C# compilado, .NET WebAssembly |
 | 3 · Calificaciones | `nuevos/Calificaciones.py` | Implementación nueva · Python / Pyodide |
-| 4 · Inventario | `Inventario.py` | Python real con Pyodide |
+| 4 · Inventario | `Inventario.py` | Python con Pyodide |
 | 5 · Reservas | `Program.cs` | C# compilado, .NET WebAssembly |
 | 6 · Reporte CSV | `nuevos/Reporte_ventas.py` | Implementación nueva · Python / Pyodide |
 
-Los cinco adjuntos se preservan byte por byte en `originales/`. No se inventan integrantes ni se atribuye código a personas sin evidencia. El documento identifica al docente Manuel Sanabria; no identifica a los autores de los programas. Los campos de curso, grupo, integrantes y fecha están vacíos.
+Los cinco archivos recibidos se conservan en `originales/`. El documento indica al docente Manuel Sanabria y deja pendientes los datos de curso, grupo, integrantes y fecha.
 
 | Contribución | Responsable | Revisión |
 |---|---|---|
 | Cuatro programas adjuntos | Autoría no identificada | Pendiente de completar por el equipo |
-| Interfaz, adaptador, documentación, explicaciones y pruebas | Generados con asistencia de OpenAI Codex a solicitud del usuario | Ver `VALIDACION.md` |
-| Ejercicios 3 y 6 | Implementaciones nuevas con asistencia de OpenAI Codex | Pruebas reproducibles y atribución separada |
+| Interfaz, adaptador, documentación, explicaciones y pruebas | Asistencia de OpenAI Codex | Ver `VALIDACION.md` |
+| Ejercicios 3 y 6 | Asistencia de OpenAI Codex | Ver `VALIDACION.md` |
 
 ## Abrir y ejecutar
 
@@ -69,7 +69,7 @@ python originales/Inventario.py
 
 En el documento, «Anita lava la tina» indica 2 dígitos. Son 0; el programa devuelve correctamente 0. Se conserva el documento original sin corregirlo.
 
-Comportamientos del código adjunto: compra termina tras entrada inválida y admite `inf` como precio; inventario permite nombre vacío y no elimina espacios extremos del nombre. Las soluciones están organizadas principalmente como flujo de consola, sin separación completa en funciones. El análisis de frases normaliza espacios literales, no todas las clases Unicode de espacios. Son observaciones del original; no se hicieron correcciones silenciosas. Los ejercicios 3 y 6 se implementaron por solicitud posterior del usuario y se identifican como nuevos; no se presentan como autoría de quienes entregaron los originales. El equipo todavía debe completar integrantes, contribuciones y revisión académica.
+Comportamientos del código adjunto: compra termina tras entrada inválida y admite `inf` como precio; inventario permite nombre vacío y no elimina espacios extremos del nombre. Las soluciones están organizadas principalmente como flujo de consola, sin separación completa en funciones. El análisis de frases normaliza espacios literales, no todas las clases Unicode de espacios. Los ejercicios 3 y 6 se añadieron por separado. Quedan pendientes los datos de integrantes y la revisión del equipo.
 
 ## Publicar
 
