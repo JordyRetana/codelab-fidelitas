@@ -1,4 +1,5 @@
-/originales/** -text
+/ejercicios/** -text
+/documentos/** -text
 *.mjs text eol=lf
 *.js text eol=lf
 *.yml text eol=lf
